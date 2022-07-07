@@ -11,8 +11,9 @@
         //database username
         private $username = 'root';
         //password of the roots database
-        private $password = "nature";
+        private $password = '123456';
         private $conn;
+
 
         //Connection to database
         //The PHP Data Objects (PDO) extension defines a lightweight, consistent interface for accessing databases in PHP.
@@ -28,7 +29,7 @@
                 $this->username, $this->password); 
                 //sets the attribute of the PDO object to error reporting mode, which will throw exceptions if there is
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch(PDOexception $e){ //catches an error raised by PDO
+            } catch(PDOexception $e){ //catches an exception raised by PDO and print it out
                 echo 'Connection Error: '.$e->getMessage();
             }
             

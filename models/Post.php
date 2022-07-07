@@ -1,4 +1,5 @@
 <?php
+    //This class is used to select data from the database - permits the creation of new data in the database
     class Post{
         //Database variables
         private $conn;
@@ -13,6 +14,8 @@
         public $author;
         public $created_at;
 
+        
+
 
         //Database constructor
         public function __construct ($db){
@@ -20,6 +23,7 @@
         }
 
         //Get Posts
+        //This read method is used to select data from two tables then prepare and execute the query
         public function read(){
             //Create a query to get data from sql table
             $query = 'SELECT
@@ -39,5 +43,11 @@
 
         //Prepare statement
         $stmt = $this->conn->prepare ($query);
+        
+        //Execute statement 
+        $stmt ->execute();
+
+         return $stmt;
+      
         }
     }
